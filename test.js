@@ -5,11 +5,11 @@
 var bytediff = require('./index'),
     expect   = require('chai').expect,
     gulp     = require('gulp'),
-    gutil    = require('gulp-util'),
+    vinyl    = require("vinyl"),
     map      = require('map-stream');
 
 function fixture (contents) {
-    return new gutil.File({
+    return new vinyl({
         contents: contents,
         cwd: __dirname,
         base: __dirname,

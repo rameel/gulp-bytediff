@@ -17,14 +17,16 @@
     "gulpplugin"
   ],
   "dependencies": {
-    "gulp-util": "~3.0.6",
-    "filesize": "~3.1.3",
-    "map-stream": "~0.0.6"
+    "ansi-colors": "^1.1.0",
+    "fancy-log": "^1.3.2",
+    "filesize": "^3.6.0",
+    "map-stream": "0.0.7"
   },
   "devDependencies": {
-    "chai": "~3.2.0",
-    "gulp": "~3.9.0",
-    "mocha": "~2.2.5"
+    "chai": "^4.1.2",
+    "gulp": "^4.0.0",
+    "mocha": "^5.0.1",
+    "vinyl": "^2.1.0"
   },
   "main": "index.js"
 }

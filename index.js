@@ -1,7 +1,8 @@
 'use strict';
 
 var size  = require('filesize'),
-    gutil = require('gulp-util'),
+    colors = require("ansi-colors"),
+    log = require("fancy-log"),
     path  = require('path'),
     map   = require('map-stream');
 
@@ -25,7 +26,7 @@ bytediff.stop = function (formatFn) {
                 var saved = (data.savings > 0) ? ' saved ' : ' gained ';
                 var color = (data.savings > 0) ? 'green' : 'yellow';
                 var start = size(data.startSize);
-                var end = gutil.colors[color](size(data.endSize));
+                var end = colors[color](size(data.endSize));
                 var report = ' (' + start + ' -> ' + end + ')';
                 return data.fileName + saved +
                   size(Math.abs(data.savings)) + report;
@@ -35,7 +36,7 @@ bytediff.stop = function (formatFn) {
         if (file.bytediff.startSize) {
             var endSize = file.contents.length;
 
-            gutil.log(formatFn({
+            log(formatFn({
                 fileName: path.basename(file.path),
                 startSize: file.bytediff.startSize,
                 endSize: endSize,
